@@ -1,0 +1,16 @@
+<?php
+
+function AutoLoad($className){
+    $filename=(__DIR__.'/Models/'.$className.'php');
+    
+    if(is_file($filename)){
+        require $filename;
+    }else{
+        exit("Erreur Fatal (AutoLoad)");
+    }
+}
+
+require __DIR__.'/Models/DbConnection.php';
+
+$db= DbConnection::getInstance();
+var_export($db);

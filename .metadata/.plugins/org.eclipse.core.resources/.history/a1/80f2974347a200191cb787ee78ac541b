@@ -1,0 +1,8 @@
+<?php
+
+class DbConnection{
+    static private $instance;
+    public static function getInstance(){
+        
+    }
+}

@@ -1,0 +1,17 @@
+<?php
+
+function AutoLoad($className){
+    $filename=(__DIR__.'/Models/'.$className.'php');
+    
+    if(is_file($filename)){
+        require $filename;
+    }else{
+        exit("Erreur Fatal (AutoLoad)");
+    }
+}
+
+spl_autoload_register("AutoLoad");
+
+
+$db= DbConnection::getInstance();
+var_export($db);

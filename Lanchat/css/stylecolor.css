@@ -1,0 +1,30 @@
+body {
+    background-color: darkgrey;
+}
+
+.field {
+    background-color: lightgray;
+    border-color: blue;
+}
+
+.menu li {
+    background-color: black;
+}
+
+.menu li a {
+    color: white;
+}
+
+.menu li:hover {
+    background-color: blue;
+}
+
+.menu li:hover a {
+    color: red;
+}
+
+.field input[type='text'],
+fieldset input[type='password'],
+fieldset input[type='email'] {
+    background-color: white;
+}

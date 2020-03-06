@@ -1,0 +1,14 @@
+<?php
+
+class User{
+    private $Id_User;
+    private $Mail_User;
+    private $UserRight_User;
+    private $Avatar_User;
+    private $Cred_User;
+    private $Victory_User;
+    private $Loss_User;
+    private $Pseudo_User;
+    private $Password_User;
+    private $Exp_Pool_User;
+}

@@ -1,0 +1,10 @@
+<?php
+
+function AutoLoad($className){
+    
+}
+
+require __DIR__.'/Models/DbConnection.php';
+
+$db= DbConnection::getInstance();
+var_export($db);

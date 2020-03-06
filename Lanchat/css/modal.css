@@ -1,0 +1,146 @@
+.modal-container {
+    display: table;
+    position: relative;
+    z-index: 1;
+    left: 0;
+    top: 0;
+}
+
+.modal-in {
+    transform: scale(1);
+    animation: unfoldIn 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+}
+
+.modal-out {
+    transform: scale(1);
+    animation: unfoldOut 1s 0.3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+}
+
+.modal-background {
+    background-color: #ffffff;
+    text-align: center;
+    position: relative;
+}
+
+.modal {
+    position: relative;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.modalcontainer-in {
+    transform: scale(0);
+    animation: zoomIn 1s 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+.modalcontainer-out {
+    transform: scale(1);
+    animation: zoomOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+.close {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes unfoldIn {
+    0% {
+        transform: scaleY(.005) scaleX(0);
+    }
+    50% {
+        transform: scaleY(.005) scaleX(1);
+    }
+    100% {
+        transform: scaleY(1) scaleX(1);
+    }
+}
+
+@keyframes unfoldOut {
+    0% {
+        transform: scaleY(1) scaleX(1);
+    }
+    50% {
+        transform: scaleY(.005) scaleX(1);
+    }
+    100% {
+        transform: scaleY(.005) scaleX(0);
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes zoomOut {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+.mask {
+    /* width: 300px;
+    height: 300px;*/
+    width: 0px;
+    height: 0px;
+    /*overflow: hidden;*/
+    position: absolute !important;
+    top: 25px;
+    left: 25px;
+}
+
+.mask-in {
+    width: 300px;
+    height: 300px;
+}
+
+.unblurred {
+    display: none;
+    top: 0;
+    left: 0;
+    float: left;
+    z-index: 900;
+    overflow: hidden;
+    /*filter: blur(0px);*/
+    /*-webkit-filter: blur(0px);*/
+    /* background-image: url("../img/manga1.jpg");*/
+    background-attachment: fixed !important;
+    background-repeat: no-repeat;
+    width: 300px !Important;
+    height: 300px !Important;
+    position: absolute;
+    cursor: move;
+    /*border: 2px solid red;*/
+    /* box-shadow: 2px 2px 2px 2px #EE0000;*/
+    filter: drop-shadow(0 0 2rem crimson)
+}
+
+.blurred {
+    z-index: 100;
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+}
+
+.unblurredIn {
+    display: block;
+}

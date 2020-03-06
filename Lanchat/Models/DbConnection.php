@@ -1,0 +1,31 @@
+<?php
+
+class DbConnection
+{
+    private static $instance = null;
+
+    private function __construct()
+    { }
+
+
+    public static function getInstance()
+    {
+        if (self::$instance === null) {
+            try {
+                $dsn = 'mysql:host=localhost;port=3306;dbname=lanchat;charset=UTF8';
+                //$option=array();
+
+                $option = [
+                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+                    PDO::ATTR_EMULATE_PREPARES => false,
+                ];
+
+                self::$instance = new PDO($dsn, "lanchat", "Cdi1234", $option);
+            } catch (Exception $ex) {
+                exit("Erreur SQL" . $ex->getMessage());
+            }
+        }
+        return self::$instance;
+    }
+}
